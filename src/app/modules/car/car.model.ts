@@ -42,7 +42,7 @@ const carSchema = new Schema<Car>(
     },
   },
   {
-    timestamps: true, // Enable timestamps
+    timestamps: true
   }
 );
 
