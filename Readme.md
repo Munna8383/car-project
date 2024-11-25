@@ -12,3 +12,7 @@ Typescript,Node,Express,Mongodb,Mongoose
 3. Create .env file in the root of your file.
 4. create 2 variable with name PORT and DATABASE_URL and assign a port eg-3000 or 5000 and put your mongodb uri as value respectively.
 5. write npm run server in the command line to start the server.
+
+## Live Serve Link
+
+[Visit Car-Project Here](https://assignment-2-car-project.vercel.app/)

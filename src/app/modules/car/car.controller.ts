@@ -23,10 +23,9 @@ const createCar = async (req: Request, res: Response) => {
 };
 const getAllCar = async (req: Request, res: Response) => {
   try {
-  
-    const searchTerm = req.query.searchTerm
+    const searchTerm = req.query.searchTerm;
 
-    const result = await carServices.getAllCar(searchTerm as string)
+    const result = await carServices.getAllCar(searchTerm as string);
 
     res.json({
       message: "Cars retrieved successfully",
@@ -44,9 +43,8 @@ const getAllCar = async (req: Request, res: Response) => {
 };
 const getSingleCar = async (req: Request, res: Response) => {
   try {
-  
-    const {carId}= req.params
-    const result = await carServices.getSingleCar(carId)
+    const { carId } = req.params;
+    const result = await carServices.getSingleCar(carId);
 
     res.json({
       message: "Cars retrieved successfully",
@@ -63,59 +61,52 @@ const getSingleCar = async (req: Request, res: Response) => {
   }
 };
 
-const updateCar= async(req:Request,res:Response)=>{
+const updateCar = async (req: Request, res: Response) => {
+  try {
+    const carId = req.params.carId;
+    const data = req.body;
+    const result = await carServices.updateCar(carId, data);
 
- try{
+    res.json({
+      message: "Car updated successfully",
+      success: true,
+      data: result,
+    });
+  } catch (err: any) {
+    res.json({
+      message: "Validation failed",
+      success: false,
+      error: err.message,
+      stack: err.stack,
+    });
+  }
+};
 
-  const carId=req.params.carId
-  const data = req.body
-  const result = await carServices.updateCar(carId,data)
+const deleteCar = async (req: Request, res: Response) => {
+  try {
+    const carId = req.params.carId;
 
-  res.json({
-    message: "Car updated successfully",
-    success: true,
-    data: result,
-  })
+    const result = await carServices.deleteCar(carId);
 
- }catch (err: any) {
-  res.json({
-    message: "Validation failed",
-    success: false,
-    error: err.message,
-    stack: err.stack,
-  });
-}
-}
-
-
-const deleteCar= async(req:Request,res:Response)=>{
-
- try{
-
-  const carId=req.params.carId
-
-  const result = await carServices.deleteCar(carId)
-
-  res.json({
-    message: "Car deleted successfully",
-    success: true,
-    data: {},
-  })
-
- }catch (err: any) {
-  res.json({
-    message: "Validation failed",
-    success: false,
-    error: err.message,
-    stack: err.stack,
-  });
-}
-}
+    res.json({
+      message: "Car deleted successfully",
+      success: true,
+      data: {},
+    });
+  } catch (err: any) {
+    res.json({
+      message: "Validation failed",
+      success: false,
+      error: err.message,
+      stack: err.stack,
+    });
+  }
+};
 
 export const carController = {
   createCar,
   getAllCar,
   getSingleCar,
   updateCar,
-  deleteCar
+  deleteCar,
 };

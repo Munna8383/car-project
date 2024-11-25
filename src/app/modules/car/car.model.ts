@@ -22,9 +22,9 @@ const carSchema = new Schema<Car>(
     },
     category: {
       type: String,
-      enum:{
-        values:["Sedan", "SUV", "Truck", "Coupe", "Convertible"],
-        message:`category must be any of them - "Sedan", "SUV", "Truck", "Coupe", "Convertible"`
+      enum: {
+        values: ["Sedan", "SUV", "Truck", "Coupe", "Convertible"],
+        message: `category must be any of them - "Sedan", "SUV", "Truck", "Coupe", "Convertible"`,
       },
       required: true,
     },
@@ -42,7 +42,7 @@ const carSchema = new Schema<Car>(
     },
   },
   {
-    timestamps: true
+    timestamps: true,
   }
 );
 

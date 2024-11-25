@@ -25,25 +25,25 @@ const createOrder = async (data: Order) => {
   }
 };
 
-const getAllRevenue = async()=>{
-    const result = await orderModel.aggregate([
-        {
-            $group:{
-                _id:null,
-                totalRevenue:{$sum:"$totalPrice"}
-            }
-        },
-        {
-            $project:{
-                _id:0,
-                totalRevenue:1
-            }
-        }
-    ])
-    return result[0]
-}
+const getAllRevenue = async () => {
+  const result = await orderModel.aggregate([
+    {
+      $group: {
+        _id: null,
+        totalRevenue: { $sum: "$totalPrice" },
+      },
+    },
+    {
+      $project: {
+        _id: 0,
+        totalRevenue: 1,
+      },
+    },
+  ]);
+  return result[0];
+};
 
 export const orderServices = {
   createOrder,
-  getAllRevenue
+  getAllRevenue,
 };
