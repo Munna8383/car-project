@@ -31,3 +31,27 @@ Typescript,Node,Express,Mongodb,Mongoose
 ## Live Serve Link
 
 [Visit Car-Project Here](https://assignment-2-car-project.vercel.app/)
+
+## Api Endpoints 
+**Post a Car** <br>
+Endpoint: /api/cars <br>
+Method: POST <br>
+**GET All Car** <br>
+Endpoint: /api/cars  <br>
+Method: GET <br>
+**GET Single Car**  <br>
+Endpoint: /api/cars/:carId <br>
+Method:GET <br>
+**Update Car** <br>
+Endpint: /api/cars/:carId <br>
+Method:PUT <br>
+**Delete Car** <br>
+Endpint: /api/cars/:carId <br>
+Method:DELETE <br>
+**Order A Car** <br>
+Endpoint: /api/orders <br>
+Method: POST <br>
+**Calculate Revenue** <br>
+Endpoint: /api/orders/revenue<br>
+
+
