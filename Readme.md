@@ -53,5 +53,6 @@ Endpoint: /api/orders <br>
 Method: POST <br>
 **Calculate Revenue** <br>
 Endpoint: /api/orders/revenue<br>
+Method: GET
 
 
