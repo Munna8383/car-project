@@ -5,6 +5,17 @@ It is a TypeScript-based Express application to manage a Car Store, using MongoD
 ## Technology Used
 Typescript,Node,Express,Mongodb,Mongoose
 
+## Feature of the Project
+1. Create a Car: Add new cars with detailed information like brand, model, year, price, category, and stock availability.
+2. View All Cars: Retrieve a list of all cars with filter options using search terms for brand, model, or category.
+3. View Car Details: Fetch detailed information for a specific car by its unique ID.
+4. Update Car: Modify details of an existing car, such as price, stock quantity, and description.
+5. Delete Car: Remove a car from the database.
+6. Place an Order: Customers can place orders by providing the car ID and quantity.
+--Automatic inventory adjustment: Reduces stock when an order is placed.
+--Insufficient Stock Handling: Prevents orders if the requested quantity exceeds available stock.
+7. Calculate Total Revenue: Aggregates the total revenue generated from all orders.
+
 ## Steps to Run the Project Locally
 
 1. Clone the Project.
